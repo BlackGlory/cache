@@ -78,11 +78,11 @@ interface IStats {
 #+END_SRC
 
 ** 环境变量
-** CACHE_HOST, CACHE_PORT
+*** CACHE_HOST, CACHE_PORT
 通过环境变量 =CACHE_HOST= 和 =CACHE_PORT= 决定服务器监听的地址和端口,
 默认值为 =localhost= 和 =8080=.
 
-** WS_HEARTBEAT_INTERVAL
+*** WS_HEARTBEAT_INTERVAL
 通过环境变量  =WS_HEARTBEAT_INTERVAL= 可以设置WS心跳包(ping帧)的发送间隔, 单位为毫秒.
 在默认情况下, 服务不会发送心跳包,
 半开连接的检测依赖于服务端和客户端的运行平台的TCP Keepalive配置.
