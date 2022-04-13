@@ -4,16 +4,16 @@ import { cache } from '@src/cache.js'
 export async function set(
   namespace: string
 , key: string
-, payload: string
-, timeToLive: number /* ms */
-, timeBeforeDeletion: number /* ms */
+, value: string
+, timeToLive: number | null /* ms */
+, timeBeforeDeletion: number | null /* ms */
 ): Promise<null> {
   await cache.set(
     createInternalKey(namespace, key)
-  , Buffer.from(payload)
+  , Buffer.from(value)
   , Date.now()
-  , timeToLive
-  , timeBeforeDeletion
+  , timeToLive ?? Infinity
+  , timeBeforeDeletion ?? Infinity
   )
   return null
 }
