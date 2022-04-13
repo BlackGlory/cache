@@ -5,7 +5,7 @@ afterEach(stopService)
 
 describe('del', () => {
   test('does not exist', async () => {
-    const client = buildClient()
+    const client = await buildClient()
 
     await client.del('namespace', 'key')
 
@@ -13,7 +13,7 @@ describe('del', () => {
   })
 
   test('exists', async () => {
-    const client = buildClient()
+    const client = await buildClient()
     await client.set('namespace', 'key', 'value', Infinity, Infinity)
 
     await client.del('namespace', 'key')

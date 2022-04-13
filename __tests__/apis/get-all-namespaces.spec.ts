@@ -5,7 +5,7 @@ afterEach(stopService)
 
 describe('getAllNamespaces', () => {
   test('no items', async () => {
-    const client = buildClient()
+    const client = await buildClient()
 
     const result = await client.getAllNamespaces()
 
@@ -13,7 +13,7 @@ describe('getAllNamespaces', () => {
   })
 
   test('has items', async () => {
-    const client = buildClient()
+    const client = await buildClient()
     await client.set('namespace', 'key', 'value', Infinity, Infinity)
 
     const result = await client.getAllNamespaces()

@@ -5,7 +5,7 @@ afterEach(stopService)
 
 describe('stats', () => {
   test('does not exist', async () => {
-    const client = buildClient()
+    const client = await buildClient()
 
     const result = await client.stats('namespace')
 
@@ -16,7 +16,7 @@ describe('stats', () => {
   })
 
   test('exists', async () => {
-    const client = buildClient()
+    const client = await buildClient()
     await client.set('namespace', 'key', 'value', Infinity, Infinity)
 
     const result = await client.stats('namespace')

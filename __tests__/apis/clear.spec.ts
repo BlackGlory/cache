@@ -5,7 +5,7 @@ afterEach(stopService)
 
 describe('clear', () => {
   test('no items', async () => {
-    const client = buildClient()
+    const client = await buildClient()
 
     await client.clear('namespace')
 
@@ -13,7 +13,7 @@ describe('clear', () => {
   })
 
   test('has items', async () => {
-    const client = buildClient()
+    const client = await buildClient()
     await client.set('namespace', 'key', 'value', Infinity, Infinity)
 
     await client.clear('namespace')

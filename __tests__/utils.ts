@@ -1,13 +1,14 @@
 import { DATA } from '@env'
 import { resetCache } from '@env/cache'
-import { buildServer } from '@src/server'
-import { createClient } from '@delight-rpc/http-client'
+import { startServer } from '@src/server'
+import { WebSocket } from 'ws'
+import { createClient } from '@delight-rpc/websocket'
 import { IAPI } from '@src/contract'
 import { openCache, closeCache } from '@src/cache'
 import { remove } from 'extra-filesystem'
-import ms from 'ms'
+import { waitForEventEmitter } from '@blackglory/wait-for'
 
-let server: ReturnType<typeof buildServer>
+let closeServer: ReturnType<typeof startServer>
 let address: string
 
 export function getAddress() {
@@ -16,12 +17,12 @@ export function getAddress() {
 
 export async function startService() {
   await initializeServer()
-  server = buildServer()
-  address = await server.listen(0)
+  closeServer = startServer('localhost', 8080)
+  address = 'ws://localhost:8080'
 }
 
 export async function stopService() {
-  await server.close()
+  await closeServer()
   await clearServer()
   resetEnvironment()
 }
@@ -40,12 +41,9 @@ async function resetEnvironment() {
   resetCache()
 }
 
-export function buildClient() {
-  return createClient<IAPI>(
-    {
-      server: address
-    , keepalive: true
-    , timeout: ms('30s')
-    }
-  )
+export async function buildClient() {
+  const ws = new WebSocket(address)
+  await waitForEventEmitter(ws, 'open')
+  const [client] = createClient<IAPI>(ws)
+  return client
 }
