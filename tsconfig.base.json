@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2018"
+  , "module": "NodeNext"
+  , "strict": true
+  , "esModuleInterop": true
+  , "skipLibCheck": true
+  , "baseUrl": "."
+  , "paths": {
+      "@src/*": ["src/*"]
+    , "@utils/*": ["src/utils/*"]
+    , "@env": ["src/env/index"]
+    , "@env/*": ["src/env/*"]
+    , "@test/*": ["__tests__/*"]
+    }
+  }
+}

@@ -1,0 +1,103 @@
+* Cache
+一个受Redis启发的Web友好的自托管ad-hoc微服务.
+提供基于HTTP的缓存服务.
+
+** 与Store的区别
+1. 有针对缓存场景的过期功能.
+2. 没有繁文缛节, 功能更少, 性能更好.
+
+** Quickstart
+#+BEGIN_SRC sh
+docker run --detach --publish 8080:8080 blackglory/cache
+#+END_SRC
+
+** Install
+*** 从源代码运行
+可以使用环境变量 =CACHE_HOST= 和 =CACHE_PORT= 决定服务器监听的地址和端口, 默认值为 =localhost= 和 =8080=.
+
+#+BEGIN_SRC sh
+git clone https://github.com/BlackGlory/cache
+cd cache
+yarn install
+yarn build
+yarn --silent start
+#+END_SRC
+
+*** Docker
+#+BEGIN_SRC sh
+docker run \
+  --detach \
+  --publish 8080:8080 \
+  blackglory/cache
+#+END_SRC
+
+**** 从源代码构建
+#+BEGIN_SRC sh
+git clone https://github.com/BlackGlory/cache
+cd cache
+yarn install
+yarn docker:build
+#+END_SRC
+
+**** Recipes
+***** 公开服务器
+****** docker-compose.yml
+#+BEGIN_SRC yaml
+version: '3.8'
+
+services:
+  cache:
+    image: 'blackglory/cache'
+    restart: always
+    volumes:
+      - 'cache-data:/data'
+    ports:
+      - '8080:8080'
+
+volumes:
+  cache-data:
+#+END_SRC
+
+***** 私人服务器
+****** docker-compose.yml
+#+BEGIN_SRC yaml
+version: '3.8'
+
+services:
+  cache:
+    image: 'blackglory/cache'
+    restart: always
+    volumes:
+      - 'cache-data:/data'
+    ports:
+      - '8080:8080'
+
+volumes:
+  cache-data:
+#+END_SRC
+
+** API
+#+BEGIN_SRC typescript
+interface IAPI {
+  has(namespace: string, key: string): Promise<boolean>
+  get(namespace: string, key: string): Promise<string | null>
+  set(
+    namespace: string
+  , key: string
+  , payload: string
+  , timeToLive: number /* ms */
+  , timeBeforeDeletion: number /* ms */
+  ): Promise<null>
+  del(namespace: string, key: string): Promise<null>
+  clear(namespace: string): Promise<null>
+
+  getAllItemKeys(namespace: string): Promise<string[]>
+  getAllNamespaces(): Promise<string[]>
+  stats(namespace: string): Promise<IStats>
+}
+
+interface IStats {
+  namespace: string
+  items: number
+}
+#+END_SRC
