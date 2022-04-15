@@ -28,15 +28,12 @@ RUN apk add --update --no-cache --virtual .build-deps \
  && apk del .build-deps \
  && mkdir /data \
  && ln -s /data data \
- && apk add --update --no-cache \
-      # healthcheck
-      curl
+ && apk add --update --no-cache
 
 COPY . ./
 
 ENV CACHE_HOST=0.0.0.0
 ENV CACHE_PORT=8080
 EXPOSE 8080
-HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1
 ENTRYPOINT ["yarn"]
 CMD ["--silent", "start"]
