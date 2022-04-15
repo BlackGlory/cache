@@ -34,8 +34,8 @@ RUN apk add --update --no-cache --virtual .build-deps \
 
 COPY . ./
 
-ENV STORE_HOST=0.0.0.0
-ENV STORE_PORT=8080
+ENV CACHE_HOST=0.0.0.0
+ENV CACHE_PORT=8080
 EXPOSE 8080
 HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1
 ENTRYPOINT ["yarn"]
