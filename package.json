@@ -60,9 +60,9 @@
   },
   "dependencies": {
     "@blackglory/prelude": "^0.1.1",
-    "@delight-rpc/websocket": "^0.3.2",
+    "@delight-rpc/websocket": "^0.3.3",
     "app-root-path": "^3.0.0",
-    "delight-rpc": "^2.1.1",
+    "delight-rpc": "^2.1.2",
     "dotenv": "^16.0.0",
     "extra-defer": "^0.2.0",
     "extra-disk-cache": "^0.5.1",
