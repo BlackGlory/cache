@@ -4,7 +4,6 @@ import { openCache, closeCache } from './cache.js'
 import { youDied } from 'you-died'
 import { PORT, HOST, CI } from '@env/index.js'
 
-
 go(async () => {
   await openCache()
   youDied(closeCache)
