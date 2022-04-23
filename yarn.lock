@@ -586,13 +586,14 @@
   dependencies:
     "@cspotcode/source-map-consumer" "0.8.0"
 
-"@delight-rpc/websocket@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@delight-rpc/websocket/-/websocket-0.3.3.tgz#4d49e5c7a8df7b63930cd02ff820da4afc3c5f49"
-  integrity sha512-a+t4ZtOy5uiyoybEjraGA4uQ7B72gLYPCy3tKYO6T1T0FTJMMhYuZWZbVicX6zBAoX/k11RrG0MwQiyWVn22zg==
+"@delight-rpc/websocket@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@delight-rpc/websocket/-/websocket-0.4.1.tgz#52e8d15ec67ed624ca8481809b8e54cc80a66227"
+  integrity sha512-wPIc2k5bFdCXNHOC/41ZNKAFbz6+LWkZHX/gxxjrFnZwEV3nLg1vh2YaALjLN5N1HDMvh4Zj2GYHTPiKYCdZXA==
   dependencies:
     "@blackglory/errors" "^2.2.1"
     "@blackglory/types" "^1.1.0"
+    extra-logger "^0.6.8"
     extra-promise "^1.0.2"
     return-style "^1.0.0"
 
@@ -1569,6 +1570,14 @@ catering@^2.0.0, catering@^2.1.0:
   resolved "https://registry.yarnpkg.com/catering/-/catering-2.1.1.tgz#66acba06ed5ee28d5286133982a927de9a04b510"
   integrity sha512-K7Qy8O9p76sL3/3m7/zLKbRkyOlSZAgzEaLhyj2mXS8PsCud2Eo4hAb8aLtZqHh0QGqLcb9dlJSu6lHRVENm1w==
 
+chalk@4, chalk@^4.1.0:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
+  integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
+  dependencies:
+    ansi-styles "^4.1.0"
+    supports-color "^7.1.0"
+
 chalk@^2.0.0, chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
@@ -1582,14 +1591,6 @@ chalk@^4.0.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.1.tgz#c80b3fab28bf6371e6863325eee67e618b77e6ad"
   integrity sha512-diHzdDKxcU+bAsUboHLPEDQiw0qEe0qd7SYUn3HgcFlWgbDcfLGswOHYeGrHKzG9z6UYf01d9VFMfZxPM1xZSg==
-  dependencies:
-    ansi-styles "^4.1.0"
-    supports-color "^7.1.0"
-
-chalk@^4.1.0:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
-  integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
   dependencies:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
@@ -2501,6 +2502,15 @@ extra-lazy@^1.0.0, extra-lazy@^1.0.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/extra-lazy/-/extra-lazy-1.1.1.tgz#47983311aa339caf985c3b169565024585a44d5f"
   integrity sha512-lkSqIqohXIo0MUByHLCk7EmFbMVrpoIltcBGV5TwZUJASsDgmvPUEruGR0Idp5TZaFwtS8B+ymBIrZpWJtZMhw==
+
+extra-logger@^0.6.8:
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/extra-logger/-/extra-logger-0.6.8.tgz#8c35b3b7aa0b935d6a781b16c90607b6d11df936"
+  integrity sha512-hegsRVBLsRXR89ice8LrjaqHSA7g2Dsyhe8OqU6n0AP5bM3ETNQlEv6zxVQ0OIH6SkIFQZ++aeZM62V4g9wNKw==
+  dependencies:
+    "@blackglory/types" "^1.1.0"
+    chalk "4"
+    justypes "^2.0.0"
 
 extra-promise@^0.21.2:
   version "0.21.2"
