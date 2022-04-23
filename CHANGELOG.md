@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/BlackGlory/cache/compare/v0.1.4...v0.1.5) (2022-04-23)
+
+
+### Features
+
+* add logging ([28702f9](https://github.com/BlackGlory/cache/commit/28702f933d81cef40f3fbf6085efcd51f99df394))
+
 ### [0.1.4](https://github.com/BlackGlory/cache/compare/v0.1.3...v0.1.4) (2022-04-15)
 
 ### [0.1.3](https://github.com/BlackGlory/cache/compare/v0.1.2...v0.1.3) (2022-04-15)
