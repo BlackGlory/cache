@@ -26,16 +26,14 @@ export function startServer(host: string, port: number): () => Promise<void> {
       loggerLevel: NODE_ENV() === NodeEnv.Test ? Level.None : Level.Info
     , version: pkg.version
     })
-    destructor.defer(() => close())
+    destructor.defer(close)
 
     const cancelHeartbeatTimer: (() => void) | null = WS_HEARTBEAT_INTERVAL() > 0
       ? setDynamicTimeoutLoop(WS_HEARTBEAT_INTERVAL(), () => socket.ping())
       : null
     destructor.defer(() => cancelHeartbeatTimer?.())
 
-    socket.once('close', async () => {
-      await destructor.execute()
-    })
+    socket.once('close', () => destructor.execute())
   })
 
   return () => new Promise<void>((resolve, reject) => {
@@ -43,6 +41,6 @@ export function startServer(host: string, port: number): () => Promise<void> {
       if (err) return reject(err)
       resolve()
     })
-    sockets.forEach(socket => socket.close())
+    server.clients.forEach(socket => socket.close())
   })
 }

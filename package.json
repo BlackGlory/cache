@@ -41,7 +41,7 @@
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "cross-env": "^7.0.3",
-    "eslint": "^8.13.0",
+    "eslint": "^8.14.0",
     "husky": "4",
     "jest": "^28.0.0-alpha.8",
     "jest-extended": "^2.0.0",
@@ -64,7 +64,7 @@
     "app-root-path": "^3.0.0",
     "delight-rpc": "^2.1.2",
     "dotenv": "^16.0.0",
-    "extra-defer": "^0.2.0",
+    "extra-defer": "^0.2.2",
     "extra-disk-cache": "^0.5.1",
     "extra-filesystem": "^0.4.0",
     "extra-promise": "^1.0.2",
@@ -73,6 +73,6 @@
     "justypes": "^2.0.0",
     "value-getter": "^0.2.3",
     "ws": "^8.5.0",
-    "you-died": "^0.3.0"
+    "you-died": "^0.4.0"
   }
 }
