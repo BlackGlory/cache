@@ -22,3 +22,5 @@ jobs:
     - run: yarn test
     - run: yarn build
     - run: yarn start --silent
+      env:
+        CI: true
