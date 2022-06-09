@@ -13,7 +13,7 @@ export default {
   }
 , testEnvironment: 'node'
 , setupFilesAfterEnv: ['jest-extended/all']
-, resolver: 'jest-ts-webcompat-resolver'
+, resolver: '@blackglory/jest-resolver'
 , testMatch: ['**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)']
 , moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: '<rootDir>/'
