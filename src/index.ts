@@ -6,7 +6,7 @@ import { PORT, HOST, CI } from '@env/index.js'
 import { writeHeapSnapshot } from 'v8'
 
 go(async () => {
-  process.on('SIGUSR1', writeHeapSnapshot)
+  process.on('SIGUSR1', () => writeHeapSnapshot())
 
   await openCache()
   youDied(closeCache)
