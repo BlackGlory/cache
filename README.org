@@ -99,3 +99,10 @@ interface IMetadata {
 
 当 =WS_HEARTBEAT_INTERVAL= 大于零时,
 服务会通过WS的ping帧按间隔发送心跳包.
+
+** 信号
+*** SIGUSR1
+发送SIGUSR1执行heapdump:
+#+BEGIN_SRC sh
+kill -SIGUSR1 {pid}
+#+END_SRC
