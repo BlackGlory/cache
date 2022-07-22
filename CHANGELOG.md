@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/BlackGlory/cache/compare/v0.2.0...v0.2.1) (2022-07-22)
+
+
+### Features
+
+* add heapdump support ([b04a66b](https://github.com/BlackGlory/cache/commit/b04a66ba5cdf3ec0b60cb1cb760bb547e27df9b5))
+
 ## [0.2.0](https://github.com/BlackGlory/cache/compare/v0.1.6...v0.2.0) (2022-05-26)
 
 
