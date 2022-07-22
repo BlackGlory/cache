@@ -5,7 +5,7 @@ import { IMetadata } from '@src/contract.js'
 
 export async function getWithMetadata(namespace: string, key: string): Promise<{
   value: string
-  metadata: IMetadata 
+  metadata: IMetadata
 } | null> {
   const internalKey = createInternalKey(namespace, key)
   const buffer = await cache.getData(internalKey)
