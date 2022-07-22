@@ -3,10 +3,10 @@ import { startServer } from './server.js'
 import { openCache, closeCache } from './cache.js'
 import { youDied } from 'you-died'
 import { PORT, HOST, CI } from '@env/index.js'
-import v8 from 'v8'
+import { writeHeapSnapshot } from 'v8'
 
 go(async () => {
-  process.on('SIGUSR1', () => v8.writeHeapSnapshot())
+  process.on('SIGUSR1', writeHeapSnapshot)
 
   await openCache()
   youDied(closeCache)
