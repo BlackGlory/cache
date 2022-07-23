@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/BlackGlory/cache/compare/v0.2.1...v0.2.2) (2022-07-23)
+
+
+### Bug Fixes
+
+* the name of heap snapshots ([ac62495](https://github.com/BlackGlory/cache/commit/ac62495dec8c71da86a5fd280b8a3275bd951d59))
+
 ### [0.2.1](https://github.com/BlackGlory/cache/compare/v0.2.0...v0.2.1) (2022-07-22)
 
 
