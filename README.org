@@ -14,6 +14,7 @@ git clone https://github.com/BlackGlory/cache
 cd cache
 yarn install
 yarn build
+yarn bundle
 yarn --silent start
 #+END_SRC
 
