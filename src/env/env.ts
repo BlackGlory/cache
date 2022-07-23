@@ -2,8 +2,8 @@ import { ValueGetter } from 'value-getter'
 import { assert, isNumber } from '@blackglory/prelude'
 import { Getter } from 'justypes'
 import { getCache } from './cache.js'
-import appRoot from 'app-root-path'
-import * as path from 'path'
+import { appRootPath } from '@utils/paths.js'
+import path from 'path'
 
 export enum NodeEnv {
   Test
@@ -32,7 +32,7 @@ export const CI: Getter<boolean> =
 
 export const DATA: Getter<string> =
   env('CACHE_DATA')
-    .default(path.join(appRoot.path, 'data'))
+    .default(path.join(appRootPath, 'data'))
     .memoize(getCache)
     .get()
 

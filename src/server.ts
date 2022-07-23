@@ -1,16 +1,13 @@
 import { WS_HEARTBEAT_INTERVAL, NODE_ENV, NodeEnv } from '@env/index.js'
 import { API } from './apis/index.js'
-import path from 'path'
-import appRoot from 'app-root-path'
 import { readJSONFileSync } from 'extra-filesystem'
 import { createServer, Level } from '@delight-rpc/websocket'
 import { WebSocket, WebSocketServer } from 'ws'
 import { Destructor } from 'extra-defer'
 import { setDynamicTimeoutLoop } from 'extra-timers'
+import { packageFilename } from '@utils/paths.js'
 
-const pkg = readJSONFileSync<{ version: `${number}.${number}.${number}` }>(
-  path.join(appRoot.path, 'package.json')
-)
+const pkg = readJSONFileSync<{ version: `${number}.${number}.${number}` }>(packageFilename)
 
 export function startServer(host: string, port: number): () => Promise<void> {
   const sockets = new Set<WebSocket>()
