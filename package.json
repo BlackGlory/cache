@@ -19,14 +19,15 @@
     "dev": "nodemon",
     "clean": "rimraf lib",
     "build": "tsc --project tsconfig.build.json",
-    "start": "node lib/index.js",
+    "bundle": "webpack --stats-error-details",
+    "start": "node dist/index.cjs",
     "docker:build": "docker build --tag cache .",
     "docker:test": "docker-compose --file docker-compose.test.yml run --rm test",
     "release": "standard-version"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "run-s prepare lint build test",
+      "pre-commit": "run-s prepare lint build test bundle",
       "commit-msg": "commitlint --config commitlint.config.cjs --env HUSKY_GIT_PARAMS"
     }
   },
@@ -55,6 +56,8 @@
     "tsconfig-paths": "^4.0.0",
     "typescript": "^4.7.4",
     "typescript-transform-paths": "^3.3.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
     "yarn-deduplicate": "^5.0.0"
   },
   "dependencies": {
