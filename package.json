@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "cache",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "type": "module",
   "repository": "git@github.com:BlackGlory/cache.git",
   "author": "BlackGlory <woshenmedoubuzhidao@blackglory.me>",
