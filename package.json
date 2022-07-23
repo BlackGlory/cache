@@ -17,7 +17,7 @@
     "test:debug": "cross-env NODE_OPTIONS='--experimental-vm-modules --loader ts-node/esm --inspect-brk' jest --runInBand --config jest.config.js",
     "test:coverage": "cross-env NODE_OPTIONS='--experimental-vm-modules' jest --runInBand --coverage --config jest.config.js",
     "dev": "nodemon",
-    "clean": "rimraf lib",
+    "clean": "rimraf lib dist",
     "build": "tsc --project tsconfig.build.json",
     "bundle": "webpack --stats-error-details",
     "start": "node dist/index.cjs",
