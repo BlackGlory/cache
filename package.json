@@ -21,7 +21,7 @@
     "build": "tsc --project tsconfig.build.json",
     "bundle": "webpack --stats-error-details",
     "start": "node dist/index.cjs",
-    "smoke": "NODE_ENV=test node dist/index.cjs",
+    "smoke": "cross-env NODE_ENV=test node dist/index.cjs",
     "docker:build": "docker build --tag cache .",
     "docker:test": "docker-compose --file docker-compose.test.yml run --rm test",
     "release": "standard-version"
