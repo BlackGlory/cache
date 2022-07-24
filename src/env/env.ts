@@ -23,13 +23,6 @@ export const NODE_ENV: Getter<NodeEnv | undefined> =
     .memoize(getCache)
     .get()
 
-export const CI: Getter<boolean> =
-  env('CI')
-    .convert(toBool)
-    .default(false)
-    .memoize(getCache)
-    .get()
-
 export const DATA: Getter<string> =
   env('CACHE_DATA')
     .default(path.join(appRootPath, 'data'))

@@ -21,13 +21,14 @@
     "build": "tsc --project tsconfig.build.json",
     "bundle": "webpack --stats-error-details",
     "start": "node dist/index.cjs",
+    "smoke": "NODE_ENV=test node dist/index.cjs",
     "docker:build": "docker build --tag cache .",
     "docker:test": "docker-compose --file docker-compose.test.yml run --rm test",
     "release": "standard-version"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "run-s prepare lint build test bundle",
+      "pre-commit": "run-s prepare lint build test bundle smoke",
       "commit-msg": "commitlint --config commitlint.config.cjs --env HUSKY_GIT_PARAMS"
     }
   },
