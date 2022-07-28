@@ -1,4 +1,4 @@
-import { startService, stopService, buildClient } from '@test/utils'
+import { startService, stopService, buildClient } from '@test/utils.js'
 
 beforeEach(startService)
 afterEach(stopService)
@@ -15,7 +15,7 @@ describe('get', () => {
   describe('exists', () => {
     test('timeToLive and timeBeforeDeletion are null', async () => {
       const client = await buildClient()
-      await client.set('namespace', 'key', 'value', null, null)
+      await client.set('namespace', 'key', 'value', null)
 
       const result = await client.getWithMetadata('namespace', 'key')
 
@@ -24,14 +24,13 @@ describe('get', () => {
       , metadata: {
           updatedAt: expect.any(Number)
         , timeToLive: null
-        , timeBeforeDeletion: null
         }
       })
     })
 
     test('timeToLive and timeBeforeDeletion are not null', async () => {
       const client = await buildClient()
-      await client.set('namespace', 'key', 'value', 10000, 20000)
+      await client.set('namespace', 'key', 'value', 10000)
 
       const result = await client.getWithMetadata('namespace', 'key')
 
@@ -40,7 +39,6 @@ describe('get', () => {
       , metadata: {
           updatedAt: expect.any(Number)
         , timeToLive: 10000
-        , timeBeforeDeletion: 20000
         }
       })
     })

@@ -1,4 +1,4 @@
-import { startService, stopService, buildClient } from '@test/utils'
+import { startService, stopService, buildClient } from '@test/utils.js'
 
 beforeEach(startService)
 afterEach(stopService)
@@ -14,7 +14,7 @@ describe('del', () => {
 
   test('exists', async () => {
     const client = await buildClient()
-    await client.set('namespace', 'key', 'value', Infinity, Infinity)
+    await client.set('namespace', 'key', 'value', null)
 
     await client.del('namespace', 'key')
 

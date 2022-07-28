@@ -8,7 +8,7 @@ export async function openCache(): Promise<void> {
   cache = await DiskCache.create(DATA())
 }
 
-export async function closeCache(): Promise<void> {
+export function closeCache(): void {
   assert(cache, 'cache is not opened')
-  await cache.close()
+  cache.close()
 }

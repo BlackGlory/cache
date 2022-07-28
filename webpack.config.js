@@ -15,6 +15,5 @@ export default {
   }
 , externals: {
     'better-sqlite3': 'commonjs better-sqlite3'
-  , 'level': 'commonjs level'
   }
 }

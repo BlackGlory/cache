@@ -3,8 +3,8 @@ import { extractFromInternalKey } from '@utils/internal-key.js'
 import { IStats } from '@src/contract.js'
 import { cache } from '@src/cache.js'
 
-export async function stats(namespace: string): Promise<IStats> {
-  const internalKeys = await cache.keysData()
+export function stats(namespace: string): IStats {
+  const internalKeys = cache.keys()
   const items = new IterableOperator(internalKeys)
     .map(extractFromInternalKey)
     .filter(x => x.namespace === namespace)
