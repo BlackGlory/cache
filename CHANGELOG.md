@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/BlackGlory/cache/compare/v0.2.3...v0.3.0) (2022-07-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* - Modify IAPI
+- Old data files are depcreated
+
+### Features
+
+* print memory usage on SIGUSR1 ([9e4e690](https://github.com/BlackGlory/cache/commit/9e4e6905e559734651d0b47c9d9c35948f2746d3))
+
+
+* upgrade to extra-disk-cache^0.7.0 ([14787d5](https://github.com/BlackGlory/cache/commit/14787d5aec1d7d75d7bea0ea9677ce68dbc1e818))
+
 ### [0.2.3](https://github.com/BlackGlory/cache/compare/v0.2.2...v0.2.3) (2022-07-23)
 
 ### [0.2.2](https://github.com/BlackGlory/cache/compare/v0.2.1...v0.2.2) (2022-07-23)
