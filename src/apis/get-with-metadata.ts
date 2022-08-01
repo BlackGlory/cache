@@ -1,18 +1,16 @@
-import { createInternalKey } from '@utils/internal-key.js'
 import { isUndefined } from '@blackglory/prelude'
-import { cache } from '@src/cache.js'
+import { view } from '@src/cache.js'
 import { IMetadata } from '@src/contract.js'
 
 export function getWithMetadata(namespace: string, key: string): {
   value: string
   metadata: IMetadata
 } | null {
-  const internalKey = createInternalKey(namespace, key)
-  const item = cache.get(internalKey)
+  const item = view.get({ namespace, key })
   if (isUndefined(item)) return null
 
   return {
-    value: item.value.toString()
+    value: item.value
   , metadata: {
       updatedAt: item.updatedAt
     , timeToLive: item.timeToLive

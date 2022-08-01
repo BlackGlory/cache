@@ -1,13 +1,13 @@
 import { IterableOperator } from 'iterable-operator/lib/es2018/style/chaining/index.js'
-import { extractFromInternalKey } from '@utils/internal-key.js'
 import { IStats } from '@src/contract.js'
-import { cache } from '@src/cache.js'
+import { view } from '@src/cache.js'
 
 export function stats(namespace: string): IStats {
-  const internalKeys = cache.keys()
-  const items = new IterableOperator(internalKeys)
-    .map(extractFromInternalKey)
+  const keys = view.keys()
+
+  const items = new IterableOperator(keys)
     .filter(x => x.namespace === namespace)
     .count()
+
   return { namespace, items }
 }

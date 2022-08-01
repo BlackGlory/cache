@@ -1,5 +1,4 @@
-import { createInternalKey } from '@utils/internal-key.js'
-import { cache } from '@src/cache.js'
+import { view } from '@src/cache.js'
 
 export function set(
   namespace: string
@@ -7,9 +6,9 @@ export function set(
 , value: string
 , timeToLive: number | null /* ms */
 ): null {
-  cache.set(
-    createInternalKey(namespace, key)
-  , Buffer.from(value)
+  view.set(
+    { namespace, key }
+  , value
   , Date.now()
   , timeToLive
   )

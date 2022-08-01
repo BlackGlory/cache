@@ -4,8 +4,8 @@ export function createInternalKey(namespace: string, key: string): string {
 
 export function extractFromInternalKey(internalKey: string): {
   namespace: string
-  key: string
-} {
+, key: string
+ } {
   const [namespace, key] = JSON.parse(internalKey) as [string, string]
   return { namespace, key }
 }
