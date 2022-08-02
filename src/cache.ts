@@ -1,13 +1,19 @@
 import { DiskCache, DiskCacheView } from 'extra-disk-cache'
 import { DATA } from '@env/index.js'
 import { assert } from '@blackglory/prelude'
+import { ensureDirSync } from 'extra-filesystem'
 import { createInternalKey, extractFromInternalKey } from '@utils/internal-key.js'
+import path from 'path'
 
 export let cache: DiskCache
 export let view: DiskCacheView<{ namespace: string, key: string }, string>
 
 export async function openCache(): Promise<void> {
-  cache = await DiskCache.create(DATA())
+  const dataPath = DATA()
+  const dataFilename = path.join(dataPath, 'data.db')
+  ensureDirSync(dataPath)
+
+  cache = await DiskCache.create(dataFilename)
   view = new DiskCacheView<{ namespace: string, key: string }, string>(
     cache
   , {
