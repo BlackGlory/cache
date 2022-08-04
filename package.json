@@ -73,7 +73,7 @@
     "extra-filesystem": "^0.4.5",
     "extra-promise": "^2.3.0",
     "extra-timers": "^0.2.5",
-    "iterable-operator": "^1.1.0",
+    "iterable-operator": "^1.2.0",
     "justypes": "^2.0.1",
     "utf-8-validate": "^5.0.9",
     "value-getter": "^0.2.4",
