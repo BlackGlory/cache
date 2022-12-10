@@ -13,7 +13,7 @@ describe('get', () => {
   })
 
   describe('exists', () => {
-    test('timeToLive and timeBeforeDeletion are null', async () => {
+    test('timeToLive is null', async () => {
       const client = await buildClient()
       await client.set('namespace', 'key', 'value', null)
 
@@ -28,7 +28,7 @@ describe('get', () => {
       })
     })
 
-    test('timeToLive and timeBeforeDeletion are not null', async () => {
+    test('timeToLive is not null', async () => {
       const client = await buildClient()
       await client.set('namespace', 'key', 'value', 10000)
 
