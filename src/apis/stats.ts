@@ -1,13 +1,14 @@
-import { IterableOperator } from 'iterable-operator/lib/es2018/style/chaining/index.js'
+import { filter, count } from 'iterable-operator'
+import { pipe } from 'extra-utils'
 import { IStats } from '@src/contract.js'
 import { view } from '@src/cache.js'
 
 export function stats(namespace: string): IStats {
-  const keys = view.keys()
-
-  const items = new IterableOperator(keys)
-    .filter(x => x.namespace === namespace)
-    .count()
+  const items = pipe(
+    view.keys()
+  , iter => filter(iter, x => x.namespace === namespace)
+  , iter => count(iter)
+  )
 
   return { namespace, items }
 }

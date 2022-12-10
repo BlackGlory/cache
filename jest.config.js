@@ -6,11 +6,6 @@ const { compilerOptions } = readJSONFileSync('./tsconfig.base.json')
 
 export default {
   preset: 'ts-jest/presets/default-esm'
-, globals: {
-    'ts-jest': {
-      useESM: true
-    }
-  }
 , testEnvironment: 'node'
 , setupFilesAfterEnv: ['jest-extended/all']
 , resolver: '@blackglory/jest-resolver'

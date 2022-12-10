@@ -1,11 +1,12 @@
 import { view } from '@src/cache.js'
-import { IterableOperator } from 'iterable-operator/lib/es2018/style/chaining/index.js'
+import { pipe } from 'extra-utils'
+import { filter, map, toArray } from 'iterable-operator'
 
 export function getAllItemKeys(namespace: string): string[] {
-  const keys = view.keys()
-
-  return new IterableOperator(keys)
-    .filter(x => x.namespace === namespace)
-    .map(x => x.key)
-    .toArray()
+  return pipe(
+    view.keys()
+  , iter => filter(iter, x => x.namespace === namespace)
+  , iter => map(iter, x => x.key)
+  , iter => toArray(iter)
+  )
 }

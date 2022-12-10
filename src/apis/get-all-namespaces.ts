@@ -1,11 +1,12 @@
-import { IterableOperator } from 'iterable-operator/lib/es2018/style/chaining/index.js'
+import { map, uniq, toArray } from 'iterable-operator'
+import { pipe } from 'extra-utils'
 import { view } from '@src/cache.js'
 
 export function getAllNamespaces(): string[] {
-  const keys = view.keys()
-
-  return new IterableOperator(keys)
-    .map(x => x.namespace)
-    .uniq()
-    .toArray()
+  return pipe(
+    view.keys()
+  , iter => map(iter, x => x.namespace)
+  , iter => uniq(iter)
+  , iter => toArray(iter)
+  )
 }
