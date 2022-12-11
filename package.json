@@ -69,7 +69,7 @@
     "delight-rpc": "^4.3.2",
     "dotenv": "^16.0.3",
     "extra-defer": "^0.2.5",
-    "extra-disk-cache": "^0.8.23",
+    "extra-disk-cache": "^0.9.0",
     "extra-filesystem": "^0.4.8",
     "extra-promise": "^4.4.0",
     "extra-timers": "^0.2.5",

@@ -2623,10 +2623,10 @@ extra-defer@^0.2.5:
     extra-promise "^3.2.2"
     justypes "^3.0.0"
 
-extra-disk-cache@^0.8.23:
-  version "0.8.23"
-  resolved "https://registry.yarnpkg.com/extra-disk-cache/-/extra-disk-cache-0.8.23.tgz#ff5b9e8af20d161d8c1de500d191dd16e1ed1425"
-  integrity sha512-mCcN8R/w3KKvQafrs5i3QWN9EsAoeboGScfX2QsXtO69iIWJwHqXBEMVlcK0uVSpSti6/2jrZm8+ptLuq4jZdg==
+extra-disk-cache@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/extra-disk-cache/-/extra-disk-cache-0.9.0.tgz#4c36816ef92196bf263b9e4b9b6bceb392595c0d"
+  integrity sha512-CgwUwFZTGuDqpiwkZDSbE8Lb0cd3nXzPRjh/8jXo2whb283GW1Nf4iEaNiO13lTwzUeVgv+CVzAM0swcFe9ybA==
   dependencies:
     "@blackglory/better-sqlite3-migrations" "^0.1.16"
     "@blackglory/prelude" "^0.1.8"

@@ -6,11 +6,6 @@ export function set(
 , value: string
 , timeToLive: number | null /* ms */
 ): null {
-  view.set(
-    { namespace, key }
-  , value
-  , Date.now()
-  , timeToLive
-  )
+  view.set({ namespace, key }, value, timeToLive)
   return null
 }

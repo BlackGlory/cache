@@ -32,7 +32,7 @@ async function initializeServer() {
 }
 
 async function clearServer() {
-  await closeCache()
+  closeCache()
   await remove(DATA())
 }
 
