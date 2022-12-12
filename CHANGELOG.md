@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/BlackGlory/cache/compare/v0.4.0...v0.5.0) (2022-12-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* The database schema update
+
+### Features
+
+* add `getWithMetadata` back ([74a19b8](https://github.com/BlackGlory/cache/commit/74a19b81dbfc90bb3d9a9b1a14ee1251b7314008))
+
+
+* upgrade dependencies ([f34891f](https://github.com/BlackGlory/cache/commit/f34891fc605456b265169dfc5520bb3b396a8532))
+
 ## [0.4.0](https://github.com/BlackGlory/cache/compare/v0.3.1...v0.4.0) (2022-12-11)
 
 
