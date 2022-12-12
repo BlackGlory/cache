@@ -1,11 +1,9 @@
-import { DATA } from '@env/index.js'
 import { resetCache } from '@env/cache.js'
 import { startServer } from '@src/server.js'
 import { WebSocket } from 'ws'
 import { createClient } from '@delight-rpc/websocket'
 import { IAPI } from '@src/contract.js'
 import { openCache, closeCache } from '@src/cache.js'
-import { remove } from 'extra-filesystem'
 import { waitForEventEmitter } from '@blackglory/wait-for'
 
 let closeServer: ReturnType<typeof startServer>
@@ -33,7 +31,6 @@ async function initializeServer() {
 
 async function clearServer() {
   closeCache()
-  await remove(DATA())
 }
 
 async function resetEnvironment() {
