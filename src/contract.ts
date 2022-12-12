@@ -1,6 +1,10 @@
 export interface IAPI {
   has(namespace: string, key: string): Promise<boolean>
   get(namespace: string, key: string): Promise<string | null>
+  getWithMetadata(namespace: string, key: string): Promise<{
+    value: string
+    metadata: IMetadata
+  } | null>
   set(
     namespace: string
   , key: string
@@ -18,4 +22,9 @@ export interface IAPI {
 export interface IStats {
   namespace: string
   items: number
+}
+
+export interface IMetadata {
+  updatedAt: number
+  timeToLive: number | null
 }
