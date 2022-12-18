@@ -7,7 +7,6 @@ const { compilerOptions } = readJSONFileSync('./tsconfig.base.json')
 export default {
   preset: 'ts-jest/presets/default-esm'
 , testEnvironment: 'node'
-, setupFilesAfterEnv: ['jest-extended/all']
 , resolver: '@blackglory/jest-resolver'
 , testMatch: ['**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)']
 , moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
