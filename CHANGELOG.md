@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/BlackGlory/cache/compare/v0.5.0...v0.6.0) (2022-12-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to delight-rpc protocol 3.0
+
+* upgrade dependencies ([85c9c15](https://github.com/BlackGlory/cache/commit/85c9c15c8074cfba4763f3265cdc911b2fcd75d7))
+
 ## [0.5.0](https://github.com/BlackGlory/cache/compare/v0.4.0...v0.5.0) (2022-12-12)
 
 
