@@ -15,5 +15,6 @@ export default {
   }
 , externals: {
     'better-sqlite3': 'commonjs better-sqlite3'
+  , '@mongodb-js/zstd': 'commonjs @mongodb-js/zstd'
   }
 }
