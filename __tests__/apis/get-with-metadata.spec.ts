@@ -22,6 +22,7 @@ describe('get', () => {
       expect(result).toStrictEqual({
         value: 'value'
       , metadata: {
+          // eslint-disable-next-line
           updatedAt: expect.any(Number)
         , timeToLive: null
         }
@@ -37,6 +38,7 @@ describe('get', () => {
       expect(result).toStrictEqual({
         value: 'value'
       , metadata: {
+          // eslint-disable-next-line
           updatedAt: expect.any(Number)
         , timeToLive: 10000
         }

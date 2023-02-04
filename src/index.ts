@@ -5,6 +5,7 @@ import { youDied } from 'you-died'
 import { PORT, HOST, NODE_ENV, NodeEnv } from '@env/index.js'
 import { writeHeapSnapshot } from 'v8'
 
+// eslint-disable-next-line
 go(async () => {
   process.on('SIGUSR1', () => {
     console.log('memory usage', process.memoryUsage())

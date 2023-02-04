@@ -6,6 +6,7 @@ import { WebSocket, WebSocketServer } from 'ws'
 import { Destructor } from 'extra-defer'
 import { setDynamicTimeoutLoop } from 'extra-timers'
 import { packageFilename } from '@utils/paths.js'
+import { pass } from '@blackglory/prelude'
 
 const pkg = readJSONFileSync<{ version: `${number}.${number}.${number}` }>(packageFilename)
 
@@ -13,7 +14,7 @@ export function startServer(host: string, port: number): () => Promise<void> {
   const sockets = new Set<WebSocket>()
 
   const server = new WebSocketServer({ host, port })
-  server.on('connection', async socket => {
+  server.on('connection', socket => {
     const destructor = new Destructor()
 
     sockets.add(socket)
@@ -30,7 +31,9 @@ export function startServer(host: string, port: number): () => Promise<void> {
       : null
     destructor.defer(() => cancelHeartbeatTimer?.())
 
-    socket.once('close', () => destructor.execute())
+    socket.once('close', () => {
+      destructor.execute().catch(pass)
+    })
   })
 
   return () => new Promise<void>((resolve, reject) => {

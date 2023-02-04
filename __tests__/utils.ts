@@ -5,40 +5,41 @@ import { createClient } from '@delight-rpc/websocket'
 import { IAPI } from '@src/contract.js'
 import { openCache, closeCache } from '@src/cache.js'
 import { waitForEventEmitter } from '@blackglory/wait-for'
+import { ClientProxy } from 'delight-rpc'
 
 let closeServer: ReturnType<typeof startServer>
 let address: string
 
-export function getAddress() {
+export function getAddress(): string {
   return address
 }
 
-export async function startService() {
+export async function startService(): Promise<void> {
   await initializeServer()
   closeServer = startServer('localhost', 8080)
   address = 'ws://localhost:8080'
 }
 
-export async function stopService() {
+export async function stopService(): Promise<void> {
   await closeServer()
-  await clearServer()
+  clearServer()
   resetEnvironment()
 }
 
-async function initializeServer() {
+async function initializeServer(): Promise<void> {
   await openCache()
 }
 
-async function clearServer() {
+function clearServer(): void {
   closeCache()
 }
 
-async function resetEnvironment() {
+function resetEnvironment(): void {
   // reset memoize
   resetCache()
 }
 
-export async function buildClient() {
+export async function buildClient(): Promise<ClientProxy<IAPI>> {
   const ws = new WebSocket(address)
   await waitForEventEmitter(ws, 'open')
   const [client] = createClient<IAPI>(ws)
