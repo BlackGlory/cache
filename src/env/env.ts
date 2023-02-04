@@ -43,7 +43,7 @@ export const PORT: Getter<number> =
     .get()
 
 export const WS_HEARTBEAT_INTERVAL: Getter<number> =
-  env('WS_HEARTBEAT_INTERVAL')
+  env('CACHE_WS_HEARTBEAT_INTERVAL')
     .convert(toInteger)
     .default(0)
     .assert(shouldBePositiveOrZero)
