@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://github.com/BlackGlory/cache/compare/v0.6.1...v0.7.0) (2023-02-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* Renamed envionment variable `WS_HEARTBEAT_INTERVAL` to `CACHE_WS_HEARTBEAT_INTERVAL`
+
+* rename environment variable ([a0de583](https://github.com/BlackGlory/cache/commit/a0de5830feb07cc2ff0ebf5bb39fee046687a84a))
+
 ### [0.6.1](https://github.com/BlackGlory/cache/compare/v0.6.0...v0.6.1) (2023-01-31)
 
 ## [0.6.0](https://github.com/BlackGlory/cache/compare/v0.5.0...v0.6.0) (2022-12-19)
