@@ -1,6 +1,6 @@
 import { go } from '@blackglory/prelude'
-import { startServer } from './server.js'
-import { openCache, closeCache } from './cache.js'
+import { startServer } from '@src/server.js'
+import { openCache, closeCache } from '@src/cache.js'
 import { youDied } from 'you-died'
 import { PORT, HOST, NODE_ENV, NodeEnv } from '@env/index.js'
 import { writeHeapSnapshot } from 'v8'

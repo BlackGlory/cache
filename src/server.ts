@@ -1,5 +1,5 @@
 import { WS_HEARTBEAT_INTERVAL, NODE_ENV, NodeEnv } from '@env/index.js'
-import { API } from './apis/index.js'
+import { API } from '@apis/index.js'
 import { readJSONFileSync } from 'extra-filesystem'
 import { createServer, Level } from '@delight-rpc/websocket'
 import { WebSocket, WebSocketServer } from 'ws'

@@ -9,8 +9,8 @@
   , "paths": {
       "@src/*": ["src/*"]
     , "@utils/*": ["src/utils/*"]
-    , "@env": ["src/env/index"]
     , "@env/*": ["src/env/*"]
+    , "@apis/*": ["src/apis/*"]
     , "@test/*": ["__tests__/*"]
     }
   }
