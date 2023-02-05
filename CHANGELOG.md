@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.0](https://github.com/BlackGlory/cache/compare/v0.7.0...v0.8.0) (2023-02-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* The APIs have been redesigned
+
+* redesign APIs ([3742a48](https://github.com/BlackGlory/cache/commit/3742a486aa5eff02aec47d0bb0ba532453c9abf8))
+
 ## [0.7.0](https://github.com/BlackGlory/cache/compare/v0.6.1...v0.7.0) (2023-02-04)
 
 
