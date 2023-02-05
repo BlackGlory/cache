@@ -3,27 +3,21 @@ import { startService, stopService, buildClient } from '@test/utils.js'
 beforeEach(startService)
 afterEach(stopService)
 
-describe('stats', () => {
+describe('removeItem', () => {
   test('does not exist', async () => {
     const client = await buildClient()
 
-    const result = await client.stats('namespace')
+    await client.removeItem('namespace', 'key')
 
-    expect(result).toStrictEqual({
-      namespace: 'namespace'
-    , items: 0
-    })
+    expect(await client.hasItem('namespace', 'key')).toBe(false)
   })
 
   test('exists', async () => {
     const client = await buildClient()
     await client.setItem('namespace', 'key', 'value', null)
 
-    const result = await client.stats('namespace')
+    await client.removeItem('namespace', 'key')
 
-    expect(result).toStrictEqual({
-      namespace: 'namespace'
-    , items: 1
-    })
+    expect(await client.hasItem('namespace', 'key')).toBe(false)
   })
 })

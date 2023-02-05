@@ -2,7 +2,7 @@ import { isUndefined } from '@blackglory/prelude'
 import { view } from '@dao/cache.js'
 import { IMetadata } from '@src/contract.js'
 
-export function getWithMetadata(namespace: string, key: string): {
+export function getItemWithMetadata(namespace: string, key: string): {
   value: string
   metadata: IMetadata
 } | null {

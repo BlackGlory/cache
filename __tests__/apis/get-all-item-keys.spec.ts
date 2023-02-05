@@ -14,7 +14,7 @@ describe('getAllItemKeys', () => {
 
   test('has items', async () => {
     const client = await buildClient()
-    await client.set('namespace', 'key', 'value', null)
+    await client.setItem('namespace', 'key', 'value', null)
 
     const result = await client.getAllItemKeys('namespace')
 

@@ -3,21 +3,21 @@ import { startService, stopService, buildClient } from '@test/utils.js'
 beforeEach(startService)
 afterEach(stopService)
 
-describe('getAllNamespaces', () => {
+describe('clearItem', () => {
   test('no items', async () => {
     const client = await buildClient()
 
-    const result = await client.getAllNamespaces()
+    await client.clearItemsByNamespace('namespace')
 
-    expect(result).toStrictEqual([])
+    expect(await client.hasItem('namespace', 'key')).toBe(false)
   })
 
   test('has items', async () => {
     const client = await buildClient()
     await client.setItem('namespace', 'key', 'value', null)
 
-    const result = await client.getAllNamespaces()
+    await client.clearItemsByNamespace('namespace')
 
-    expect(result).toStrictEqual(['namespace'])
+    expect(await client.hasItem('namespace', 'key')).toBe(false)
   })
 })

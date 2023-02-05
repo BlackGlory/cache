@@ -1,6 +1,6 @@
 import { view } from '@dao/cache.js'
 
-export function set(
+export function setItem(
   namespace: string
 , key: string
 , value: string

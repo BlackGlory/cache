@@ -1,23 +1,23 @@
 import { ImplementationOf } from 'delight-rpc'
 import { IAPI } from '@src/contract.js'
-import { has } from './has.js'
-import { get } from './get.js'
-import { getWithMetadata } from './get-with-metadata.js'
-import { set } from './set.js'
-import { del } from './del.js'
-import { clear } from './clear.js'
+import { hasItem } from './has-item.js'
+import { getItem } from './get-item.js'
+import { getItemWithMetadata } from './get-item-with-metadata.js'
+import { setItem } from './set-item.js'
+import { removeItem } from './remove-item.js'
+import { clearItemsByNamespace } from './clear-items-by-namespace.js'
 import { getAllItemKeys } from './get-all-item-keys.js'
 import { getAllNamespaces } from './get-all-namespaces.js'
 import { stats } from './stats.js'
 
 export const API: ImplementationOf<IAPI> = {
-  has
-, get
-, getWithMetadata
-, set
-, del
-, clear
-, getAllItemKeys
+  stats
 , getAllNamespaces
-, stats
+, getAllItemKeys
+, hasItem
+, getItem
+, getItemWithMetadata
+, setItem
+, removeItem
+, clearItemsByNamespace
 }

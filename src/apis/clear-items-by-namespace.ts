@@ -2,7 +2,7 @@ import { fromInternalKey } from '@utils/internal-key.js'
 import { toArray } from 'iterable-operator'
 import { cache } from '@dao/cache.js'
 
-export function clear(namespace: string): null {
+export function clearItemsByNamespace(namespace: string): null {
   const internalKeys = toArray(cache.keys())
 
   internalKeys

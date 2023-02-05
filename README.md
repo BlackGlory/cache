@@ -50,23 +50,28 @@ volumes:
 ## API
 ```typescript
 interface IAPI {
-  has(namespace: string, key: string): boolean
-  get(namespace: string, key: string): string | null
-  getWithMetadata(namespace: string, key: string): {
+  hasItem(namespace: string, key: string): boolean
+
+  getItem(namespace: string, key: string): string | null
+  getItemWithMetadata(namespace: string, key: string): {
     value: string
     metadata: IMetadata
   } | null
-  set(
+
+  setItem(
     namespace: string
   , key: string
   , value: string
   , timeToLive: number | null /* ms */
   ): null
-  del(namespace: string, key: string): null
-  clear(namespace: string): null
+
+  removeItem(namespace: string, key: string): null
+
+  clearItemsByNamespace(namespace: string): null
 
   getAllItemKeys(namespace: string): string[]
   getAllNamespaces(): string[]
+
   stats(namespace: string): IStats
 }
 
