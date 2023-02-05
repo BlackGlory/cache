@@ -1,22 +1,22 @@
 export interface IAPI {
-  has(namespace: string, key: string): Promise<boolean>
-  get(namespace: string, key: string): Promise<string | null>
-  getWithMetadata(namespace: string, key: string): Promise<{
+  has(namespace: string, key: string): boolean
+  get(namespace: string, key: string): string | null
+  getWithMetadata(namespace: string, key: string): {
     value: string
     metadata: IMetadata
-  } | null>
+  } | null
   set(
     namespace: string
   , key: string
   , value: string
   , timeToLive: number | null /* ms */
-  ): Promise<null>
-  del(namespace: string, key: string): Promise<null>
-  clear(namespace: string): Promise<null>
+  ): null
+  del(namespace: string, key: string): null
+  clear(namespace: string): null
 
-  getAllItemKeys(namespace: string): Promise<string[]>
-  getAllNamespaces(): Promise<string[]>
-  stats(namespace: string): Promise<IStats>
+  getAllItemKeys(namespace: string): string[]
+  getAllNamespaces(): string[]
+  stats(namespace: string): IStats
 }
 
 export interface IStats {
