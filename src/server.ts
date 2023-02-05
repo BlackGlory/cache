@@ -5,12 +5,14 @@ import { createServer, Level } from '@delight-rpc/websocket'
 import { WebSocket, WebSocketServer } from 'ws'
 import { Destructor } from 'extra-defer'
 import { setDynamicTimeoutLoop } from 'extra-timers'
-import { packageFilename } from '@utils/paths.js'
+import { getPackageFilename } from '@utils/paths.js'
 import { pass } from '@blackglory/prelude'
 
-const pkg = readJSONFileSync<{ version: `${number}.${number}.${number}` }>(packageFilename)
-
 export function startServer(host: string, port: number): () => Promise<void> {
+  const pkg = readJSONFileSync<{
+    version: `${number}.${number}.${number}`
+  }>(getPackageFilename())
+
   const sockets = new Set<WebSocket>()
 
   const server = new WebSocketServer({ host, port })

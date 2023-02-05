@@ -1,14 +1,19 @@
 import { findUpPackageFilenameSync } from 'extra-filesystem'
-import { go, assert, isntUndefined } from '@blackglory/prelude'
-import { dirname } from 'path'
 import { fileURLToPath } from 'url'
+import path from 'path'
+import { assert } from '@blackglory/prelude'
 
-const currentDirname = fileURLToPath(new URL(import.meta.url))
+export function getAppRoot(): string {
+  const packageFilename = getPackageFilename()
 
-export const packageFilename = go(() => {
-  const result = findUpPackageFilenameSync(currentDirname)
-  assert(isntUndefined(result), 'Not found package.json')
-  return result
-})
+  return path.dirname(packageFilename)
+}
 
-export const appRootPath = dirname(packageFilename)
+export function getPackageFilename(): string {
+  const packageFilename = findUpPackageFilenameSync(
+    path.dirname(fileURLToPath(import.meta.url))
+  )
+  assert(packageFilename, 'The package.json not found')
+
+  return packageFilename
+}
