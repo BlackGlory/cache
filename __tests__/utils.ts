@@ -3,7 +3,7 @@ import { startServer } from '@src/server.js'
 import { WebSocket } from 'ws'
 import { createClient } from '@delight-rpc/websocket'
 import { IAPI } from '@src/contract.js'
-import { openCache, closeCache } from '@src/cache.js'
+import { openCache, closeCache } from '@dao/cache.js'
 import { waitForEventEmitter } from '@blackglory/wait-for'
 import { ClientProxy } from 'delight-rpc'
 

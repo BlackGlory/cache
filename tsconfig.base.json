@@ -11,6 +11,7 @@
     , "@utils/*": ["src/utils/*"]
     , "@env/*": ["src/env/*"]
     , "@apis/*": ["src/apis/*"]
+    , "@dao/*": ["src/dao/*"]
     , "@test/*": ["__tests__/*"]
     }
   }

@@ -1,6 +1,6 @@
 import { fromInternalKey } from '@utils/internal-key.js'
 import { toArray } from 'iterable-operator'
-import { cache } from '@src/cache.js'
+import { cache } from '@dao/cache.js'
 
 export function clear(namespace: string): null {
   const internalKeys = toArray(cache.keys())

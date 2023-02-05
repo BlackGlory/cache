@@ -1,5 +1,5 @@
 import { isUndefined } from '@blackglory/prelude'
-import { view } from '@src/cache.js'
+import { view } from '@dao/cache.js'
 import { IMetadata } from '@src/contract.js'
 
 export function getWithMetadata(namespace: string, key: string): {

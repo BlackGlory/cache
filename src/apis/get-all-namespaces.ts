@@ -1,6 +1,6 @@
 import { map, uniq, toArray } from 'iterable-operator'
 import { pipe } from 'extra-utils'
-import { view } from '@src/cache.js'
+import { view } from '@dao/cache.js'
 
 export function getAllNamespaces(): string[] {
   return pipe(

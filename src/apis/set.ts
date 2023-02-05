@@ -1,4 +1,4 @@
-import { view } from '@src/cache.js'
+import { view } from '@dao/cache.js'
 
 export function set(
   namespace: string
