@@ -5,7 +5,7 @@ import { createServer, Level } from '@delight-rpc/websocket'
 import { WebSocket, WebSocketServer } from 'ws'
 import { Destructor } from 'extra-defer'
 import { setDynamicTimeoutLoop } from 'extra-timers'
-import { getPackageFilename } from '@utils/paths.js'
+import { getPackageFilename } from '@utils/get-package-filename.js'
 import { pass } from '@blackglory/prelude'
 
 export function startServer(host: string, port: number): () => Promise<void> {

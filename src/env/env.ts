@@ -2,7 +2,7 @@ import { ValueGetter } from 'value-getter'
 import { assert, isNumber } from '@blackglory/prelude'
 import { Getter } from 'justypes'
 import { getCache } from './cache.js'
-import { getAppRoot } from '@utils/paths.js'
+import { getAppRoot } from '@utils/get-app-root.js'
 import path from 'path'
 
 export enum NodeEnv {
