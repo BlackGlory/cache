@@ -1,6 +1,5 @@
 # Cache
-一个受Redis启发的Web友好的自托管ad-hoc微服务.
-提供以WebSocket为通讯协议的缓存服务.
+提供以WebSocket为通讯协议的缓存服务, 受到Redis启发.
 
 ## Quickstart
 ```sh
