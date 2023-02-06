@@ -16,5 +16,7 @@ export default {
 , externals: {
     'better-sqlite3': 'commonjs better-sqlite3'
   , '@mongodb-js/zstd': 'commonjs @mongodb-js/zstd'
+  , 'bufferutil': 'commonjs bufferutil'
+  , 'utf-8-validate': 'commonjs utf-8-validate'
   }
 }
