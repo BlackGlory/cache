@@ -8,12 +8,12 @@ import { removeItem } from './remove-item.js'
 import { clearItemsByNamespace } from './clear-items-by-namespace.js'
 import { getAllItemKeys } from './get-all-item-keys.js'
 import { getAllNamespaces } from './get-all-namespaces.js'
-import { getNamespaceStatistics } from './get-namespace-statistics.js'
+import { getNamespaceStats } from './get-namespace-stats.js'
 
 export const API: ImplementationOf<IAPI> = {
-  getNamespaceStatistics
-, getAllNamespaces
+  getAllNamespaces
 , getAllItemKeys
+, getNamespaceStats
 , hasItem
 , getItem
 , getItemValue

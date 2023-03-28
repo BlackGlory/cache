@@ -1,6 +1,6 @@
 import { JSONValue } from 'justypes'
 
-export interface INamespaceStatistics {
+export interface INamespaceStats {
   items: number
 }
 
@@ -13,7 +13,7 @@ export interface IAPI {
   getAllNamespaces(): string[]
   getAllItemKeys(namespace: string): string[]
 
-  getNamespaceStatistics(namespace: string): INamespaceStatistics
+  getNamespaceStats(namespace: string): INamespaceStats
 
   hasItem(namespace: string, itemKey: string): boolean
 

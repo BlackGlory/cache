@@ -48,7 +48,7 @@ volumes:
 
 ## API
 ```ts
-interface INamespaceStatistics {
+interface INamespaceStats {
   items: number
 }
 
@@ -61,7 +61,7 @@ interface IAPI {
   getAllNamespaces(): string[]
   getAllItemKeys(namespace: string): string[]
 
-  getNamespaceStatistics(namespace: string): INamespaceStatistics
+  getNamespaceStats(namespace: string): INamespaceStats
 
   hasItem(namespace: string, itemKey: string): boolean
 
