@@ -3,27 +3,25 @@ import { startService, stopService, buildClient } from '@test/utils.js'
 beforeEach(startService)
 afterEach(stopService)
 
-describe('stats', () => {
-  test('does not exist', async () => {
+describe('getNamespaceStatistics', () => {
+  test('namespace does not exist', async () => {
     const client = await buildClient()
 
-    const result = await client.stats('namespace')
+    const result = await client.getNamespaceStatistics('namespace')
 
     expect(result).toStrictEqual({
-      namespace: 'namespace'
-    , items: 0
+      items: 0
     })
   })
 
-  test('exists', async () => {
+  test('namespace exists', async () => {
     const client = await buildClient()
     await client.setItem('namespace', 'key', 'value', null)
 
-    const result = await client.stats('namespace')
+    const result = await client.getNamespaceStatistics('namespace')
 
     expect(result).toStrictEqual({
-      namespace: 'namespace'
-    , items: 1
+      items: 1
     })
   })
 })

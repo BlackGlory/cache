@@ -48,33 +48,33 @@ volumes:
 
 ## API
 ```ts
-interface IStats {
-  namespace: string
+interface INamespaceStatistics {
   items: number
 }
 
-interface IMetadata {
+interface IItemMetadata {
   updatedAt: number
   timeToLive: number | null
 }
 
 interface IAPI {
-  stats(namespace: string): IStats
   getAllNamespaces(): string[]
   getAllItemKeys(namespace: string): string[]
 
+  getNamespaceStatistics(namespace: string): INamespaceStatistics
+
   hasItem(namespace: string, itemKey: string): boolean
 
-  getItem(namespace: string, itemKey: string): string | null
-  getItemWithMetadata(namespace: string, itemKey: string): {
-    value: string
-    metadata: IMetadata
+  getItem(namespace: string, itemKey: string): {
+    value: JSONValue
+    metadata: IItemMetadata
   } | null
+  getItemValue(namespace: string, itemKey: string): JSONValue | null
 
   setItem(
     namespace: string
   , itemKey: string
-  , itemValue: string
+  , itemValue: JSONValue
   , timeToLive: number | null /* ms */
   ): null
 

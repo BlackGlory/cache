@@ -1,14 +1,14 @@
 import { filter, count } from 'iterable-operator'
 import { pipe } from 'extra-utils'
-import { IStats } from '@src/contract.js'
+import { INamespaceStatistics } from '@src/contract.js'
 import { view } from '@dao/cache.js'
 
-export function stats(namespace: string): IStats {
+export function getNamespaceStatistics(namespace: string): INamespaceStatistics {
   const items = pipe(
     view.keys()
   , iter => filter(iter, x => x.namespace === namespace)
   , iter => count(iter)
   )
 
-  return { namespace, items }
+  return { items }
 }

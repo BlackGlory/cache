@@ -1,24 +1,24 @@
 import { DiskCache, DiskCacheView } from 'extra-disk-cache'
 import { DATA, NODE_ENV, NodeEnv } from '@env/index.js'
-import { assert } from '@blackglory/prelude'
+import { assert, JSONValue } from '@blackglory/prelude'
 import { ensureDirSync } from 'extra-filesystem'
 import { fromInternalKey, toInternalKey } from '@utils/internal-key.js'
 import path from 'path'
 
 export let cache: DiskCache
-export let view: DiskCacheView<{ namespace: string, key: string }, string>
+export let view: DiskCacheView<{ namespace: string, key: string }, JSONValue>
 
 export async function openCache(): Promise<void> {
   cache = await DiskCache.create(getDataFilename())
-  view = new DiskCacheView<{ namespace: string, key: string }, string>(
+  view = new DiskCacheView<{ namespace: string, key: string }, JSONValue>(
     cache
   , {
       toString: ({ namespace, key }) => toInternalKey(namespace, key)
     , fromString: (key: string) => fromInternalKey(key)
     }
   , {
-      toBuffer: (value: string) => Buffer.from(value)
-    , fromBuffer: (buffer: Buffer) => buffer.toString()
+      toBuffer: (value: JSONValue) => Buffer.from(JSON.stringify(value))
+    , fromBuffer: (buffer: Buffer) => JSON.parse(buffer.toString()) as JSONValue
     }
   )
 }
