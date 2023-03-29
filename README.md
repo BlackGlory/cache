@@ -52,6 +52,11 @@ interface INamespaceStats {
   items: number
 }
 
+interface IItem {
+  value: JSONValue
+  metadata: IItemMetadata
+}
+
 interface IItemMetadata {
   updatedAt: number
   timeToLive: number | null
@@ -65,10 +70,7 @@ interface IAPI {
 
   hasItem(namespace: string, itemKey: string): boolean
 
-  getItem(namespace: string, itemKey: string): {
-    value: JSONValue
-    metadata: IItemMetadata
-  } | null
+  getItem(namespace: string, itemKey: string): IItem | null
   getItemValue(namespace: string, itemKey: string): JSONValue | null
 
   setItem(
