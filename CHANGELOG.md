@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.0](https://github.com/BlackGlory/cache/compare/v0.9.0...v0.10.0) (2025-05-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v16 => Node.js v22
+
+* upgrade dependencies ([89b20f3](https://github.com/BlackGlory/cache/commit/89b20f33105b272d3e4b318802f76433dc95044e))
+
 ## [0.9.0](https://github.com/BlackGlory/cache/compare/v0.8.3...v0.9.0) (2023-03-28)
 
 
