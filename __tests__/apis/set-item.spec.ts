@@ -1,12 +1,12 @@
+import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest'
 import { startService, stopService, buildClient } from '@test/utils.js'
-import { jest } from '@jest/globals'
 
 beforeEach(startService)
 afterEach(stopService)
 
 describe('setItem', () => {
   test('item does not exist', async () => {
-    jest.useFakeTimers({ now: 100 })
+    vi.useFakeTimers({ now: 0 })
     try {
       const client = await buildClient()
 
@@ -16,32 +16,32 @@ describe('setItem', () => {
         value: 'value'
       , metadata: {
           timeToLive: null
-        , updatedAt: 100
+        , updatedAt: 0
         }
       })
     } finally {
-      jest.useRealTimers()
+      vi.useRealTimers()
     }
   })
 
   test('item exists', async () => {
-    jest.useFakeTimers({ now: 100 })
+    vi.useFakeTimers({ now: 0 })
     try {
       const client = await buildClient()
       await client.setItem('namespace', 'key', 'old-value', null)
 
-      jest.setSystemTime(200)
+      vi.advanceTimersByTime(100)
       await client.setItem('namespace', 'key', 'new-value', null)
 
       expect(await client.getItem('namespace', 'key')).toStrictEqual({
         value: 'new-value'
       , metadata: {
           timeToLive: null
-        , updatedAt: 200
+        , updatedAt: 100
         }
       })
     } finally {
-      jest.useRealTimers()
+      vi.useRealTimers()
     }
   })
 })

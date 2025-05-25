@@ -9,6 +9,13 @@ export default {
     __dirname: true,
   }
 , entry: './lib/index.js'
+, module: {
+    parser: {
+      javascript: {
+        url: false
+      }
+    }
+  }
 , output: {
     path: fileURLToPath(new URL('dist', import.meta.url))
   , filename: 'index.cjs'

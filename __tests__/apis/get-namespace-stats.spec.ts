@@ -1,3 +1,4 @@
+import { describe, test, expect, beforeEach, afterEach } from 'vitest'
 import { startService, stopService, buildClient } from '@test/utils.js'
 
 beforeEach(startService)
